@@ -11,7 +11,7 @@ public class HuffTree implements Comparable {
         this.root = new HuffInternalNode(left, right, weight);
     }
 
-    HuffBaseNode root() {
+    public HuffBaseNode root() {
         return this.root;
     }
 

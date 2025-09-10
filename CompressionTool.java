@@ -1,5 +1,6 @@
 import tools.HuffTree;
 import tools.HuffmanBuilder;
+import tools.HuffmanCodeGenerator;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,8 +37,12 @@ public class CompressionTool {
                 }
             }
             HuffTree huffTree = HuffmanBuilder.buildTree(freqMap);
+            Map<Character, String> codeTable = new HashMap<>();
+            HuffmanCodeGenerator.generateCodes(huffTree.root(), "", codeTable);
 
-
+            for (Map.Entry<Character, String> entry : codeTable.entrySet()) {
+                System.out.println(entry.getKey() + " : "  + entry.getValue());
+            }
         } catch (IOException e) {
             System.err.println("Error opening file " + filename + ": " + e.getMessage());
             System.exit(1);
