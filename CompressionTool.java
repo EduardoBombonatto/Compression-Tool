@@ -1,3 +1,6 @@
+import tools.HuffTree;
+import tools.HuffmanBuilder;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -32,8 +35,8 @@ public class CompressionTool {
                     freqMap.put(ch, 1);
                 }
             }
-            System.out.println(freqMap.toString());
-            System.exit(0);
+            HuffTree huffTree = HuffmanBuilder.buildTree(freqMap);
+
 
         } catch (IOException e) {
             System.err.println("Error opening file " + filename + ": " + e.getMessage());
