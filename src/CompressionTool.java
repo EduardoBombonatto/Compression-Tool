@@ -1,6 +1,7 @@
 package src;
 
 import src.tools.CompressFile;
+import src.tools.DecompressFile;
 import src.tools.Tools;
 
 public class CompressionTool {
@@ -22,7 +23,8 @@ public class CompressionTool {
                     ((CompressFile) tools).compressFile(filename);
                     break;
                 case "-d":
-                    System.out.println("Decompressing file: " + filename);
+                    tools = new DecompressFile();
+                    ((DecompressFile) tools).decompressFile(filename);
                     break;
                 default:
                     System.out.println("Choose a valid action : for compress : -c and for de-compress: -d");

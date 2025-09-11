@@ -49,12 +49,10 @@ public class CompressFile implements Tools {
     }
 
     /**
-     * @param dos DataOutputStream to the file
+     * @param dos          DataOutputStream to the file
      * @param huffmanCodes The huffman code table.
-     * @throws IOException
-     *
-     * this method writes header content to the compressed file
-     * Header content contains - the size of huffman code, charcter - huffcode size for a character and value of huffman code for character
+     * @throws IOException this method writes header content to the compressed file
+     *                     Header content contains - the size of huffman code, charcter - huffcode size for a character and value of huffman code for character
      */
     public static void writeHeader(Map<Character, String> huffmanCodes, DataOutputStream dos) throws IOException {
         dos.writeInt(huffmanCodes.size());
@@ -66,12 +64,9 @@ public class CompressFile implements Tools {
     }
 
     /**
-     *
-     * @param dos DataOutputStream to the file
+     * @param dos         DataOutputStream to the file
      * @param huffmanCode The huffman code table.
-     * @throws IOException
-     *
-     * generate the bit sequence for compressed file for each huffman code
+     * @throws IOException generate the bit sequence for compressed file for each huffman code
      */
     public static void writeHuffmanCodeAsBits(DataOutputStream dos, String huffmanCode) throws IOException {
         int bitsToWrite = huffmanCode.length();
@@ -88,11 +83,8 @@ public class CompressFile implements Tools {
     }
 
     /**
-     *
      * @param encodedText content of the given file in the for loop of encoded
-     * @return
-     *
-     * generate byte array for the content of the given file
+     * @return generate byte array for the content of the given file
      */
     public static byte[] encodeToByteArray(String encodedText) {
         int byteSize = (int) Math.ceil(encodedText.length() / 8.0);

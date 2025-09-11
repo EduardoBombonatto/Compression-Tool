@@ -31,7 +31,7 @@ public class Tree {
         return codeTable;
     }
 
-    void prefixCodeTable (Node root, String s, Map<Character, String> codeTable) {
+    void prefixCodeTable(Node root, String s, Map<Character, String> codeTable) {
         if (root.left == null && root.right == null) {
             codeTable.put(root.c, s);
             return;

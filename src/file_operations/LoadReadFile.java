@@ -18,7 +18,6 @@ public class LoadReadFile {
     }
 
     /**
-     *
      * @param data --> string of data after reading a file
      * @return mapFreq
      */
@@ -33,6 +32,7 @@ public class LoadReadFile {
 
     /**
      * Add the sufix "-compressed" to the file name
+     *
      * @param fileName original name of the file
      * @return new name
      */
@@ -46,5 +46,12 @@ public class LoadReadFile {
         } else {
             return fileName + "-compressed";
         }
+    }
+
+    public String replaceCompressedSuffixToDecompressed(String fileName) {
+        if (fileName.contains("-compressed")) {
+            return fileName.replace("-compressed", "-decompressed");
+        }
+        return fileName + "-decompressed";
     }
 }
